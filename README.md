@@ -1,7 +1,7 @@
 # Batch Python Program Verify
 
 ## About
-As a TA(teach assistant) of Programming Class, 
+As a TA(teaching assistant) of Programming Class, 
 it is very annoying to test students' homework assignments one by one.
 So I wrote this to helping me verify if students' homework assignments have the correct file name,
 and correct excute result.
@@ -9,7 +9,7 @@ and correct excute result.
 ## Usage
 ### Attention !!
 This program was made for NCNU IM programming class,
-its function is combined with the Moodle System, and our Online Judge.
+its functions are combined with the Moodle System, and our Online Judge.
 If you are not using any of this,
 then you need to change a little for costomize
 
