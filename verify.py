@@ -1,5 +1,5 @@
 import os, sys
-from subprocess import Popen, PIPE, STDOUT
+from subprocess import Popen, PIPE, STDOUT, TimeoutExpired
 import pprint
 
 def testHW(id_and_name, file) :
@@ -11,14 +11,16 @@ def testHW(id_and_name, file) :
         output = ''.join(allTestData[i+1]).strip()
         try :
             p = Popen('python "' +file+'"',  stdout=PIPE, stdin=PIPE, stderr=STDOUT)
-            stdout = p.communicate(input=bytes(input, 'utf-8'))[0]
+            stdout = p.communicate(input=bytes(input, 'utf-8'), timeout=1)[0]
             execRes = stdout.decode().replace('\r', '').strip()
             result.append(execRes)
             if execRes != output :
                 students[id_and_name] += ['程式無法正確執行測資 '+str(i//2+1)]
-
+        except TimeoutExpired as time_err :
+            # print(time_err)
+            students[id_and_name] += ['程式執行測資 ' + str(i//2+1) + ' Timeout']
+            p.kill()
         except Exception as e:
-            # print(stdout)
             # print(e)
             students[id_and_name] += ['程式無法正確執行測資 '+str(i//2+1)]
     print(result)
