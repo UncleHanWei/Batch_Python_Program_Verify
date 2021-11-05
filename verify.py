@@ -12,7 +12,7 @@ def testHW(id_and_name, file) :
         try :
             p = Popen('python "' +file+'"',  stdout=PIPE, stdin=PIPE, stderr=STDOUT)
             stdout = p.communicate(input=bytes(input, 'utf-8'), timeout=1)[0]
-            execRes = stdout.decode().replace('\r', '').strip()
+            execRes = stdout.decode('cp950').replace('\r', '').strip()
             result.append(execRes)
             if execRes != output :
                 students[id_and_name] += ['程式無法正確執行測資 '+str(i//2+1)]
