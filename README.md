@@ -10,8 +10,9 @@ and correct excute result.
 ### Attention !!
 This program was made for NCNU IM programming class,
 its functions are combined with the Moodle System, and our Online Judge.
+And the runtime environment is Windows 10.
 If you are not using any of this,
-then you need to change a little for costomize
+then you need to change a little for customize
 
 ### Step 1 :
 Create a folder as a root folder for your homeworks
